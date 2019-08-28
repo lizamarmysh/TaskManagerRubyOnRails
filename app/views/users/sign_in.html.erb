@@ -1,0 +1,29 @@
+<div class="text-center">
+    <%if User.exists?(email:"ivanov@mail.ru", password: "123455") %>
+      <%= "fdgfh"%>
+    <% end %>
+
+
+<%= form_for :user, url: tasks_path, method: :patch do |f| %>
+    
+  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <p>
+    Email<br>
+    <%= f.text_field(:email, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    Password<br>
+    <%= f.password_field(:password, {:class => 'form-control'}) %>
+  </p>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <p>
+    <%= f.submit("Sign in",{:class => 'btn btn-success'}) %>
+  </p>
+
+<% end %>
+</div>
